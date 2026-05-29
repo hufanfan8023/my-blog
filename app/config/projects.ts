@@ -17,7 +17,7 @@ export const projects: Project[] = [
       '面向 C 端的小额消费贷款金融小程序。主包+多分包架构、路由拦截网关、RSA+AES+Base64 三重加密、60+ 业务页面。',
     tech: ['uni-app', 'Vue 2', 'Vuex', 'uView', '神策埋点', '高德地图'],
     cover: '/images/projects/chengjiu-loan.svg',
-    links: { article: '/posts/2026-06-15-sensor-sdk-integration' },
+    links: { article: '/posts/2026-06-29-chengjiu-loan-miniapp-practice' },
     status: '已上线',
     year: 2024,
   },
