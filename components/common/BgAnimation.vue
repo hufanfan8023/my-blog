@@ -166,11 +166,17 @@ onBeforeUnmount(() => {
   --glow-y: 45vh;
 
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100lvh;
   z-index: var(--z-bg);
   pointer-events: none;
   overflow: hidden;
   background: #7dd3fc;
+  contain: paint;
+  isolation: isolate;
 }
 
 .sky-photo {
@@ -181,7 +187,8 @@ onBeforeUnmount(() => {
   background-size: cover;
   background-position: center 42%;
   transform: translate3d(var(--cloud-base-x), var(--cloud-base-y), 0) scale(1.05);
-  will-change: transform, background-position;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .sky-photo--base {
@@ -365,12 +372,10 @@ onBeforeUnmount(() => {
   0% {
     transform: translate3d(calc(-1.8% + var(--cloud-slow-x)), calc(-0.6% + var(--cloud-slow-y)), 0)
       scale(1.08);
-    background-position: 42% 50%;
   }
   100% {
     transform: translate3d(calc(1.8% + var(--cloud-slow-x)), calc(0.8% + var(--cloud-slow-y)), 0)
       scale(1.1);
-    background-position: 58% 54%;
   }
 }
 
@@ -380,11 +385,11 @@ onBeforeUnmount(() => {
   }
 
   50% {
-    transform: translate3d(58vw, -1.6vh, 0) scale(1);
+    transform: translate3d(58vw, -14px, 0) scale(1);
   }
 
   100% {
-    transform: translate3d(128vw, 0.8vh, 0) scale(0.98);
+    transform: translate3d(128vw, 8px, 0) scale(0.98);
   }
 }
 
