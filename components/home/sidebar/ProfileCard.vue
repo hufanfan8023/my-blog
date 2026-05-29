@@ -1,12 +1,20 @@
 <script setup lang="ts">
 import { siteConfig } from '~/app/config/site'
+
+const withBasePath = useBasePath()
 </script>
 
 <template>
   <GlassCard class="card">
     <div class="head">
       <NuxtLink to="/about" class="avatar-link">
-        <img :src="siteConfig.author.avatar" alt="头像" class="avatar" width="64" height="64" />
+        <img
+          :src="withBasePath(siteConfig.author.avatar)"
+          alt="头像"
+          class="avatar"
+          width="64"
+          height="64"
+        />
       </NuxtLink>
       <div class="info">
         <div class="name">{{ siteConfig.author.name }}</div>
@@ -39,7 +47,12 @@ import { siteConfig } from '~/app/config/site'
   position: absolute;
   inset: -3px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.86), rgba(14, 165, 233, 0.24) 58%, transparent 72%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.86),
+    rgba(14, 165, 233, 0.24) 58%,
+    transparent 72%
+  );
   z-index: -1;
   animation: pulseGlow 2.4s ease-in-out infinite;
 }
@@ -69,7 +82,14 @@ import { siteConfig } from '~/app/config/site'
   margin-top: 6px;
 }
 @keyframes pulseGlow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.04); }
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.04);
+  }
 }
 </style>

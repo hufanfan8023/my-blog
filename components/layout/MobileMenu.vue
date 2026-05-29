@@ -3,13 +3,17 @@ import { siteConfig } from '~/app/config/site'
 
 const route = useRoute()
 const open = useMobileMenuOpen()
+const withBasePath = useBasePath()
 
 watch(open, (v) => {
   if (typeof document === 'undefined') return
   document.body.style.overflow = v ? 'hidden' : ''
 })
 
-watch(() => route.path, () => (open.value = false))
+watch(
+  () => route.path,
+  () => (open.value = false),
+)
 
 function isActive(href: string) {
   if (href === '/') return route.path === '/'
@@ -23,13 +27,7 @@ function isActive(href: string) {
       <div v-if="open" class="overlay" @click="open = false" />
     </Transition>
     <Transition name="slide">
-      <aside
-        v-if="open"
-        class="mobile-menu"
-        role="dialog"
-        aria-modal="true"
-        aria-label="导航菜单"
-      >
+      <aside v-if="open" class="mobile-menu" role="dialog" aria-modal="true" aria-label="导航菜单">
         <header class="head">
           <span class="title">导航</span>
           <button class="close" aria-label="关闭导航菜单" @click="open = false">×</button>
@@ -50,7 +48,7 @@ function isActive(href: string) {
           <a :href="siteConfig.social.github" target="_blank" rel="noopener" class="social">
             GitHub
           </a>
-          <NuxtLink to="/rss.xml" external class="social">RSS</NuxtLink>
+          <a :href="withBasePath('/rss.xml')" class="social">RSS</a>
         </footer>
       </aside>
     </Transition>

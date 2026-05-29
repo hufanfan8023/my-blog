@@ -1,4 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const appBaseURL = process.env.NUXT_APP_BASE_URL || '/'
+const withAppBase = (path: string) =>
+  `${appBaseURL.endsWith('/') ? appBaseURL : `${appBaseURL}/`}${path.replace(/^\/+/, '')}`
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-27',
   devtools: { enabled: true },
@@ -50,6 +54,7 @@ export default defineNuxtConfig({
   },
 
   app: {
+    baseURL: appBaseURL,
     head: {
       htmlAttrs: { lang: 'zh-CN' },
       titleTemplate: '%s · 一只打打打',
@@ -59,12 +64,12 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#0ea5e9' },
       ],
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', type: 'image/svg+xml', href: withAppBase('/favicon.svg') },
         {
           rel: 'alternate',
           type: 'application/rss+xml',
           title: '一只打打打 RSS',
-          href: '/rss.xml',
+          href: withAppBase('/rss.xml'),
         },
       ],
     },

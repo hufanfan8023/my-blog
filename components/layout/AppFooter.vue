@@ -2,6 +2,7 @@
 import { siteConfig } from '~/app/config/site'
 
 const year = new Date().getFullYear()
+const withBasePath = useBasePath()
 </script>
 
 <template>
@@ -15,8 +16,8 @@ const year = new Date().getFullYear()
       </div>
       <nav class="links" aria-label="Footer links">
         <a :href="siteConfig.social.github" target="_blank" rel="noopener">GitHub</a>
-        <NuxtLink to="/rss.xml" external>RSS</NuxtLink>
-        <NuxtLink to="/sitemap.xml" external>Sitemap</NuxtLink>
+        <a :href="withBasePath('/rss.xml')">RSS</a>
+        <a :href="withBasePath('/sitemap.xml')">Sitemap</a>
       </nav>
     </div>
   </footer>

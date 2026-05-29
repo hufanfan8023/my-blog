@@ -1,5 +1,9 @@
 <script setup lang="ts">
 const bgRef = ref<HTMLElement | null>(null)
+const withBasePath = useBasePath()
+const skyPhotoStyle = {
+  '--sky-photo-url': `url('${withBasePath('/images/sky-clouds-cc0.jpg')}')`,
+}
 
 const cloudParts = ['base', 'left', 'center', 'crest', 'right', 'shine'] as const
 
@@ -129,7 +133,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div ref="bgRef" class="bg-anim" aria-hidden="true">
+  <div ref="bgRef" class="bg-anim" :style="skyPhotoStyle" aria-hidden="true">
     <div class="sky-photo sky-photo--base" />
     <div class="sky-photo sky-photo--slow" />
     <div class="floating-clouds">
@@ -172,7 +176,7 @@ onBeforeUnmount(() => {
 .sky-photo {
   position: absolute;
   inset: -8%;
-  background-image: url('/images/sky-clouds-cc0.jpg');
+  background-image: var(--sky-photo-url);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 42%;

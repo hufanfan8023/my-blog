@@ -2,6 +2,8 @@
 import { siteConfig } from '~/app/config/site'
 import { education, projects, skills, stats, timeline, traits } from '~/app/config/projects'
 
+const withBasePath = useBasePath()
+
 const capabilityHighlights = [
   'Vue 2 / Vue 3 / Nuxt / TypeScript 项目从 0 到 1 搭建',
   'uni-app、微信小程序、H5、PC Web、移动 APP 多端交付',
@@ -53,6 +55,10 @@ const contactItems = [
   { label: 'GitHub', value: 'https://github.com/hffbox', href: siteConfig.social.github },
 ]
 
+function projectHref(project: (typeof projects)[number]) {
+  return withBasePath(project.links?.article || project.links?.github || '#projects')
+}
+
 useSeoMeta({
   title: '关于',
   description: `${siteConfig.author.name} · ${siteConfig.author.title} · ${siteConfig.author.summary}`,
@@ -99,7 +105,7 @@ useHead({
         <div class="hero-profile">
           <div class="avatar-wrap">
             <img
-              :src="siteConfig.author.avatar"
+              :src="withBasePath(siteConfig.author.avatar)"
               alt="胡凡凡头像"
               class="avatar"
               width="112"
@@ -177,11 +183,11 @@ useHead({
           <a
             v-for="project in projects"
             :key="project.name"
-            :href="project.links?.article || project.links?.github || '#projects'"
+            :href="projectHref(project)"
             class="project-card"
           >
             <img
-              :src="project.cover"
+              :src="withBasePath(project.cover)"
               :alt="project.name"
               class="cover"
               loading="lazy"
