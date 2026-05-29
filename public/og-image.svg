@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7DD3FC"/>
+      <stop offset="48%" stop-color="#BAE6FD"/>
+      <stop offset="100%" stop-color="#F8FDFF"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0369A1"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <g fill="#FFFFFF" opacity="0.72">
+    <ellipse cx="160" cy="130" rx="150" ry="42"/>
+    <ellipse cx="280" cy="105" rx="160" ry="58"/>
+    <ellipse cx="430" cy="138" rx="140" ry="42"/>
+    <ellipse cx="860" cy="230" rx="150" ry="42"/>
+    <ellipse cx="990" cy="200" rx="170" ry="64"/>
+    <ellipse cx="1120" cy="236" rx="130" ry="38"/>
+    <ellipse cx="260" cy="525" rx="230" ry="58"/>
+    <ellipse cx="520" cy="500" rx="270" ry="76"/>
+    <ellipse cx="790" cy="535" rx="250" ry="60"/>
+  </g>
+  <rect x="72" y="82" width="1056" height="466" rx="28" fill="#FFFFFF" opacity="0.54"/>
+  <text x="100" y="245" font-family="JetBrains Mono, Consolas, monospace" font-size="34"
+        font-weight="700" fill="#0284C7">hff</text>
+  <text x="100" y="346" font-family="Inter, sans-serif" font-size="68"
+        font-weight="700" fill="url(#title)">一只打打打</text>
+  <text x="100" y="404" font-family="Inter, sans-serif" font-size="24"
+        fill="#0C4A6E">前端工程化 · 跨端业务 · 项目复盘 · 学习笔记</text>
+  <text x="100" y="500" font-family="JetBrains Mono, Consolas, monospace" font-size="16"
+        fill="#0284C7">VUE · NUXT · TYPESCRIPT · UNI-APP</text>
+</svg>

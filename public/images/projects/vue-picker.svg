@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#BAE6FD"/>
+      <stop offset="100%" stop-color="#F8FDFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="200" fill="url(#sky)"/>
+  <g fill="#FFFFFF" opacity="0.72">
+    <ellipse cx="86" cy="50" rx="60" ry="18"/>
+    <ellipse cx="150" cy="38" rx="72" ry="24"/>
+    <ellipse cx="318" cy="64" rx="68" ry="20"/>
+  </g>
+  <g transform="translate(72, 50)">
+    <rect x="0" y="0" width="76" height="104" rx="10" fill="#FFFFFF" opacity="0.74" stroke="#7DD3FC"/>
+    <text x="38" y="31" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#0369A1">浙江省</text>
+    <text x="38" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#64748B">江苏省</text>
+    <text x="38" y="84" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#64748B">福建省</text>
+  </g>
+  <g transform="translate(162, 50)">
+    <rect x="0" y="0" width="76" height="104" rx="10" fill="#FFFFFF" opacity="0.78" stroke="#38BDF8"/>
+    <text x="38" y="31" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#0284C7">杭州市</text>
+    <text x="38" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#64748B">宁波市</text>
+    <text x="38" y="84" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#64748B">温州市</text>
+  </g>
+  <g transform="translate(252, 50)">
+    <rect x="0" y="0" width="76" height="104" rx="10" fill="#FFFFFF" opacity="0.74" stroke="#67E8F9"/>
+    <text x="38" y="31" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#0891B2">滨江区</text>
+    <text x="38" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#64748B">余杭区</text>
+    <text x="38" y="84" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#64748B">西湖区</text>
+  </g>
+  <text x="50%" y="182" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace"
+        font-size="11" fill="#0369A1">VUE PICKER</text>
+</svg>
